@@ -143,7 +143,7 @@ def destroy(container):
     Destroys a container
     '''
     if not exists(container): raise ContainerDoesntExists('Container {} does not exists!'.format(container))
-    return _run('lxc-destroy -n {}'.format(container))
+    return _run('lxc-destroy -fn {}'.format(container))
 
 def checkconfig():
     '''
