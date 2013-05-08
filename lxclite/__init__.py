@@ -53,6 +53,17 @@ def create(container, template='ubuntu', storage=None):
             
     return _run(command)
 
+def clone(original, container, snapshot=False):
+    '''
+    Clones an existing container
+    '''
+    if exists(container): raise ContainerAlreadyExists('Container {} already created!'.format(container))
+    if not exists(original): raise ContainerDoesntExists('Container {} does not exist!'.format(original))
+
+    command = 'lxc-clone -n {} -o {}'.format(container, original)
+    if snapshot: command += ' -s'
+    return _run(command)
+
 def info(container):
     '''
     Check info from lxc-info*
