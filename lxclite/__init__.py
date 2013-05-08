@@ -62,8 +62,7 @@ def clone(original, container, snapshot=False):
 
     command = 'lxc-clone -n {} -o {}'.format(container, original)
     if snapshot: command += ' -s'
-    print(command)
-    #return _run(command)
+    return _run(command)
 
 def info(container):
     '''
