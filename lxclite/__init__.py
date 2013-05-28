@@ -150,6 +150,12 @@ def stop(container):
     if container in stopped(): raise ContainerNotRunning('Container {} is not running!'.format(container))
     return _run('lxc-stop -n {}'.format(container))
 
+def restart(container):
+    '''
+    Restarts a container
+    '''
+    stop(container)
+    return start(container)
 
 def freeze(container):
     '''
