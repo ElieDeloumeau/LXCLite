@@ -9,11 +9,6 @@ A small python library for LXC
 
 **Contact: elie@deloumeau.fr**
 
-Installation
-============
-
-    git clone https://github.com/googley/LXCLite.git
-
 Usage
 =====
 
